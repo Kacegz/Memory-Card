@@ -14,7 +14,6 @@ function Cards(){
         const response = await fetch("https://api.thecatapi.com/v1/images/search?breed_ids=mcoo&limit=12&api_key=live_cO4dBGi9j4LszgTVXd0axFpWBysAibXZxVyPjaJzezOxJTAjh5vrB3XOS4ajM67Z");
         //https://api.capy.lol/v1/capybaras?take=12
         const data = await response.json();
-        console.log(data)
         data.forEach((e,i) => {
             e.index=i;
         });
@@ -23,10 +22,8 @@ function Cards(){
     }
     function handleClick(e){
         const id=e.target
-        console.log(id)
         let clickedCardsArray=[...clickedCards]
         let copiedScore=score
-        console.log(clickedCardsArray)
         if(!clickedCardsArray.includes(id)){
             clickedCardsArray=[...clickedCardsArray,id]
             copiedScore++
@@ -42,7 +39,6 @@ function Cards(){
         fetchData()
     },[])
     useEffect(()=>{
-        console.log(clickedCards)
         let copiedBestScore=bestScore
         if(score>=bestScore){
             copiedBestScore=score
