@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@500&display=swap');
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  font-family: "Shantell Sans", cursive;
+  font-weight: 500;
+  font-style: normal;
   background-color: #e6d8ca;
-  color: #C08261;
+  color: #8d6047;
 }
 h1,h2{
   margin: 0;
@@ -23,7 +25,6 @@ h1,h2{
   place-items: center;
   gap: 30px;
   min-height:500px;
-
 }
 .card{
   background-color: #575757;
