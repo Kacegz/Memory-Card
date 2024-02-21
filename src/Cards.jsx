@@ -5,17 +5,21 @@ function randomizeArray(list){
 }
 
 function Cards(){
-    const [cardList,setCardList]= useState([1,2,3,4,5,6,7,8,9,10,11,12]);
+    const [cardList,setCardList]= useState([]);
     const [clickedCards,setClickedCards]=useState([])
     const [score,setScore]=useState(0)
     const [bestScore,setBestScore]=useState(0)
+    const [loading,setLoading]=useState(true)
     async function fetchData(){
         const response = await fetch("https://api.thecatapi.com/v1/images/search?breed_ids=mcoo&limit=12&api_key=live_cO4dBGi9j4LszgTVXd0axFpWBysAibXZxVyPjaJzezOxJTAjh5vrB3XOS4ajM67Z");
+        //https://api.capy.lol/v1/capybaras?take=12
         const data = await response.json();
+        console.log(data)
         data.forEach((e,i) => {
             e.index=i;
         });
         setCardList(data)
+        setLoading(false)
     }
     function handleClick(e){
         const id=e.target
@@ -48,6 +52,7 @@ function Cards(){
     },[score])
     return (
     <>
+    {loading && <div id="loading"><div id="loadingicon"></div></div>}
     <div id="cards">
         {
         cardList.map(card=>{
@@ -55,8 +60,8 @@ function Cards(){
         })
         }
     </div>
-    <h1>Score: {score}</h1>
-    <h1>Best score: {bestScore}</h1>
+    <h2>Score: {score}</h2>
+    <h2>Best score: {bestScore}</h2>
     </>
     )
 }
