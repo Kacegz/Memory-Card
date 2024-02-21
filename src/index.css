@@ -2,8 +2,10 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  background-color: #e6d8ca;
+  color: #C08261;
 }
-h2{
+h1,h2{
   margin: 0;
 }
 #root{
@@ -12,26 +14,37 @@ h2{
   align-items: center;
   flex-direction: column;
   gap: 40px;
+  margin: 40px;
 }
 #cards{
   display: grid;
   grid-template-columns: repeat(6,1fr);
   grid-template-rows: 1fr 1fr;
   place-items: center;
-  gap: 30px
+  gap: 30px;
+  min-height:500px;
+
 }
 .card{
   background-color: #575757;
   border-radius: 20px;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  width: 15vw;
+  height: 250px;
+  object-fit: cover;
+}
+.cardbutton{
+  all:unset;
+  border-radius: 20px;
+  width: 15vw;
+  height: 250px;
   border: none;
   cursor: pointer;
-  object-fit: cover;
+  outline: inherit;
+}
+.cardbutton:hover{
+  box-shadow: 0px 0px 20px 3px #C08261;
+  outline: none;
+  border: none;
 }
 #loading{
   background-color: rgba(36, 36, 36, 0.8);
@@ -46,4 +59,23 @@ h2{
   width: 60px;
   height: 60px;
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle fill="%23FF156D" stroke="%23FF156D" stroke-width="15" r="15" cx="40" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate></circle><circle fill="%23FF156D" stroke="%23FF156D" stroke-width="15" r="15" cx="100" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate></circle><circle fill="%23FF156D" stroke="%23FF156D" stroke-width="15" r="15" cx="160" cy="65"><animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;" keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate></circle></svg>');
+}
+@media (max-width: 600px) {
+  #cards{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(6,1fr);
+    place-items: center;
+    gap: 30px;
+  }
+  .cardbutton{
+    width: 150px;
+    height: 150px;
+  }
+  .cardbutton:hover{
+    box-shadow: none;
+  }
+  .card{
+    width: 150px;
+    height: 150px;
+  }
 }

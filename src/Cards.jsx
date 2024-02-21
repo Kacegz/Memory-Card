@@ -12,7 +12,7 @@ function Cards(){
     const [loading,setLoading]=useState(true)
     async function fetchData(){
         const response = await fetch("https://api.thecatapi.com/v1/images/search?breed_ids=mcoo&limit=12&api_key=live_cO4dBGi9j4LszgTVXd0axFpWBysAibXZxVyPjaJzezOxJTAjh5vrB3XOS4ajM67Z");
-        //https://api.capy.lol/v1/capybaras?take=12
+        //const response = await fetch("https://api.capy.lol/v1/capybaras?take=12");
         const data = await response.json();
         data.forEach((e,i) => {
             e.index=i;
@@ -52,7 +52,7 @@ function Cards(){
     <div id="cards">
         {
         cardList.map(card=>{
-            return (<button className="card" key={card.index} onClick={(e)=>{handleClick(e)}}><img className="card" id={card.index} src={card.url}></img> </button>)
+            return (<button className="cardbutton" key={card.index} onClick={(e)=>{handleClick(e)}}><img className="card" id={card.index} src={card.url}></img></button>)
         })
         }
     </div>
