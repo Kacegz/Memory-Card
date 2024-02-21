@@ -17,10 +17,12 @@ function Cards(){
         });
         setCardList(data)
     }
-    function handleClick(card){
-        const id=card.target.id
+    function handleClick(e){
+        const id=e.target
+        console.log(id)
         let clickedCardsArray=[...clickedCards]
         let copiedScore=score
+        console.log(clickedCardsArray)
         if(!clickedCardsArray.includes(id)){
             clickedCardsArray=[...clickedCardsArray,id]
             copiedScore++
@@ -49,7 +51,7 @@ function Cards(){
     <div id="cards">
         {
         cardList.map(card=>{
-            return (<button className="card" key={card.id} id={card.index} onClick={(e)=>{handleClick(e)}}><img className="card" src={card.url}></img> </button>)
+            return (<button className="card" key={card.index} onClick={(e)=>{handleClick(e)}}><img className="card" id={card.index} src={card.url}></img> </button>)
         })
         }
     </div>
