@@ -1,12 +1,11 @@
-import Cards from './Cards'
+import Cards from "./Cards";
 function App() {
-
   return (
     <>
       <h1>Memory game</h1>
-      <Cards/>
+      <Cards />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
