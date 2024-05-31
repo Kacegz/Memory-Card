@@ -14,6 +14,7 @@ function Cards() {
     const response = await fetch(
       "https://api.thecatapi.com/v1/images/search?breed_ids=mcoo&limit=12&api_key=live_cO4dBGi9j4LszgTVXd0axFpWBysAibXZxVyPjaJzezOxJTAjh5vrB3XOS4ajM67Z"
     );
+    /// NOTE: use the link below if you wish to use capyAPI
     //const response = await fetch("https://api.capy.lol/v1/capybaras?take=12");
     const data = await response.json();
     data.forEach((e, i) => {

@@ -10,6 +10,7 @@ Good luck!
 
 ![Screenshot](./Screenshot.png)
 
+
 ## Installation
 1. Clone the repo
 ```sh
