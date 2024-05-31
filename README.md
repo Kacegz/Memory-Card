@@ -1,5 +1,5 @@
 # Memory card game
-Level up your memory for free with this online memory card game
+Level up your memory with this online memory card game
 Click on the images to get points
 
 If you click the same image twice, you lose
